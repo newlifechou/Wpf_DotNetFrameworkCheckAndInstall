@@ -21,17 +21,27 @@ namespace Wpf_DotNetFrameworkCheckAndInstall
     /// </summary>
     public partial class MainWindow : Window
     {
-        private SystemInformationUC uc;
+        private SystemInformationUC uc1;
+        private InstallDotNetFrameworkUC uc2;
         public MainWindow()
         {
             InitializeComponent();
-            uc = new SystemInformationUC();
-
+            uc1 = new SystemInformationUC();
+            uc2 = new InstallDotNetFrameworkUC();
 
             Messenger.Default.Register<object>(this, "SystemInformationUCToken", obj =>
             {
-                mainArea.Child = uc;
+                mainArea.Child = uc1;
             });
+            Messenger.Default.Register<object>(this, "InstallDotNetFrameworkUCToken", obj =>
+            {
+                mainArea.Child = uc2;
+            });
+
+            this.Unloaded += (s, e) =>
+            {
+                Messenger.Default.Unregister(this);
+            };
         }
     }
 }

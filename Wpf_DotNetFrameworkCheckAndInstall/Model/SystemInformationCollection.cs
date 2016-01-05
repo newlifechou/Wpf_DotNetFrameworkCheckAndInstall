@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Win32;
+using System.IO;
+using System.Diagnostics;
+
 namespace Wpf_DotNetFrameworkCheckAndInstall.Model
 {
     /// <summary>
@@ -49,6 +52,50 @@ namespace Wpf_DotNetFrameworkCheckAndInstall.Model
                 return GetVersionFromRegistry() + "\r\n" + Get45or451FromRegistry();
             }
         }
+
+        public List<string> DNFrameworkNameList
+        {
+            get
+            {
+                string folderPath = Path.Combine(Environment.CurrentDirectory,Properties.Settings.Default.InstallFolder);
+                DirectoryInfo dir = new DirectoryInfo(folderPath);
+                if (!dir.Exists)
+                {
+                    return null;
+                }
+                List<string> result = new List<string>();
+                foreach (var file in dir.GetFiles("*.exe"))
+                {
+                    result.Add(file.Name);
+                }
+                return result;
+            }
+        }
+
+        public void OpenIt(string file)
+        {
+            string filePath = Path.Combine(Environment.CurrentDirectory,Properties.Settings.Default.InstallFolder, file);
+            if (File.Exists(filePath))
+            {
+                try
+                {
+                    ProcessStartInfo p = new ProcessStartInfo(filePath);
+                    Process process = new Process();
+                    process.StartInfo = p;
+                    if (!process.Start())
+                    {
+                        //启动失败，写入日志
+                    }
+                }
+                catch (Exception ex)
+                {
+                    //操作被用户取消错误
+                }
+
+            }
+        }
+
+
         /// <summary>
         /// 获取NF1-4.0版本
         ///代码来源MSDN

@@ -72,14 +72,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="InstallDotNetFrameworkUC.xaml.cs">
+      <DependentUpon>InstallDotNetFrameworkUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model\SystemInformationCollection.cs" />
     <Compile Include="SystemInformationUC.xaml.cs">
       <DependentUpon>SystemInformationUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\InstallDotNetFrameworkUCViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\SystemInformationUCViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Page Include="CommonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InstallDotNetFrameworkUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

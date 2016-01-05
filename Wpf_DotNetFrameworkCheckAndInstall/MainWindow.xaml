@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal" Background="Gray">
             <Button Content="System Information" Command="{Binding  ShowSystemInformationUCCommand}"/>
-            <Button Content="Install .NET Framework"/>
+            <Button Content="Install .NET Framework" Command="{Binding ShowInstallDotNetFrameworkUCCommand}"/>
         </StackPanel>
         <Border Name="mainArea" Grid.Row="1">
             <TextBlock Text="Welcome to use!" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>

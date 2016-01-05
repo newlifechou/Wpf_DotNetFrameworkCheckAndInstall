@@ -35,8 +35,13 @@ namespace Wpf_DotNetFrameworkCheckAndInstall.ViewModel
             {
                 Messenger.Default.Send<object>(null, "SystemInformationUCToken");
             });
+            ShowInstallDotNetFrameworkUCCommand = new RelayCommand(() =>
+            {
+                Messenger.Default.Send<object>(null, "InstallDotNetFrameworkUCToken");
+            });
         }
 
-       public RelayCommand ShowSystemInformationUCCommand { get; set; }
+        public RelayCommand ShowSystemInformationUCCommand { get; set; }
+        public RelayCommand ShowInstallDotNetFrameworkUCCommand { get; set; }
     }
 }

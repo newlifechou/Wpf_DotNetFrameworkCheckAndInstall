@@ -22,5 +22,17 @@ namespace Wpf_DotNetFrameworkCheckAndInstall.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("InstallFiles")]
+        public string InstallFolder {
+            get {
+                return ((string)(this["InstallFolder"]));
+            }
+            set {
+                this["InstallFolder"] = value;
+            }
+        }
     }
 }

@@ -44,6 +44,7 @@ namespace Wpf_DotNetFrameworkCheckAndInstall.ViewModel
 
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<SystemInformationUCViewModel>();
+            SimpleIoc.Default.Register<InstallDotNetFrameworkUCViewModel>();
         }
 
         public MainViewModel Main
@@ -53,7 +54,7 @@ namespace Wpf_DotNetFrameworkCheckAndInstall.ViewModel
                 return ServiceLocator.Current.GetInstance<MainViewModel>();
             }
         }
-        
+
         public SystemInformationUCViewModel SystemInformation
         {
             get
@@ -62,6 +63,13 @@ namespace Wpf_DotNetFrameworkCheckAndInstall.ViewModel
             }
         }
 
+        public InstallDotNetFrameworkUCViewModel InstallDotNetFramework
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<InstallDotNetFrameworkUCViewModel>();
+            }
+        }
 
         public static void Cleanup()
         {
