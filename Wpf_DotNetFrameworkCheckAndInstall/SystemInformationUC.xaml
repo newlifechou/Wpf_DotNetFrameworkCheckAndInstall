@@ -20,12 +20,12 @@
         </Grid.RowDefinitions>
         <TextBlock  Text="System Version"/>
         <TextBox Grid.Column="1"  Text="{Binding SystemVersion}" IsReadOnly="True"/>
-        <TextBlock Grid.Row="1" Grid.Column="0"  Text=".Net Framework Version"/>
+        <TextBlock Grid.Row="1" Grid.Column="0"  Text="Lowest .Net Framework"/>
         <TextBox Grid.Row="1" Grid.Column="1"  Text="{Binding NetFrameworkVersion}" IsReadOnly="True"/>
         <TextBlock Grid.Row="2" Grid.Column="0"  Text="Process Count"/>
         <TextBox Grid.Row="2" Grid.Column="1"  Text="{Binding ProcessCount}" IsReadOnly="True"/>
         <TextBlock Grid.Row="3" Grid.Column="0"  Grid.ColumnSpan="2" Text="All .Net Framework Version Installed On This OS"/>
-        <TextBox  Grid.Row="4" Grid.ColumnSpan="2" Text="{Binding AllDotNetFrameworkVersion}"/>
+        <TextBox  Grid.Row="4" Grid.ColumnSpan="2" Text="{Binding AllDotNetFrameworkVersion}" IsReadOnly="True"/>
 
 
     </Grid>
