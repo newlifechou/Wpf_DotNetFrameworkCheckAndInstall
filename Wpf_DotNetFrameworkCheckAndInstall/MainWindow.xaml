@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Wpf_DotNetFrameworkCheckAndInstall"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="550" DataContext="{Binding Source={StaticResource Locator},Path=Main}"
-        WindowStartupLocation="CenterScreen" >
+        WindowStartupLocation="CenterScreen" WindowStyle="SingleBorderWindow" ResizeMode="NoResize" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
